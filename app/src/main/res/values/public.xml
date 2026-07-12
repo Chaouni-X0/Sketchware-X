@@ -48,6 +48,7 @@
     <public name="selector_btnbar_center" id="0x7f07037b" type="drawable" />
     <public name="selector_btnbar_left" id="0x7f07037c" type="drawable" />
     <public name="selector_btnbar_right" id="0x7f07037d" type="drawable" />
+    <public name="ic_mtrl_ai" id="0x7f07037e" type="drawable" />
     <public name="add_button" id="0x7f080023" type="id" />
     <public name="btn_cancel" id="0x7f08005a" type="id" />
     <public name="btn_decide" id="0x7f080060" type="id" />
@@ -258,4 +259,5 @@
     <public name="picker_color_title_delete_all_custom_color" id="0x7f0e071b" type="string" />
     <public name="picker_color_title_delete_custom_color" id="0x7f0e071c" type="string" />
     <public name="root_spec_common_when" id="0x7f0e082a" type="string" />
+    <public name="main_fab_new_project" id="0x7f0e082b" type="string" />
 </resources>
