@@ -1,70 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/backgroundColor">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/backgroundColor">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/color_primary"
-            app:title="@string/ai_chat_title"
-            app:titleTextColor="@color/tool_bar_text_color"
-            app:navigationIcon="@drawable/abc_ic_ab_back_material" />
-    </com.google.android.material.appbar.AppBarLayout>
+            android:layout_height="wrap_content">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/chat_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="8dp"
-        android:clipToPadding="false" />
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/color_primary"
+                app:title="@string/ai_chat_title"
+                app:titleTextColor="@color/tool_bar_text_color"
+                app:navigationIcon="@drawable/abc_ic_menu_overflow_material" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="4dp"
-        app:strokeWidth="1dp"
-        app:strokeColor="@color/scolor_light_grey">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:clipToPadding="false" />
 
         <LinearLayout
+            android:id="@+id/attachment_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="4dp"
-            android:gravity="center_vertical">
+            android:padding="8dp"
+            android:visibility="gone">
+            <!-- سيتم إضافة معاينة الملفات المرفقة هنا -->
+        </LinearLayout>
 
-            <EditText
-                android:id="@+id/ai_input"
-                android:layout_width="0dp"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/scolor_light_grey">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:hint="@string/ai_chat_hint"
-                android:padding="12dp"
-                android:maxLines="4"
-                android:inputType="textMultiLine" />
+                android:orientation="horizontal"
+                android:padding="4dp"
+                android:gravity="center_vertical">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/send_button"
+                <ImageButton
+                    android:id="@+id/btn_attach"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_mtrl_add"
+                    android:layout_marginStart="8dp" />
+
+                <ImageButton
+                    android:id="@+id/btn_select_project"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_mtrl_box" />
+
+                <EditText
+                    android:id="@+id/ai_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/ai_chat_hint"
+                    android:padding="12dp"
+                    android:maxLines="4"
+                    android:inputType="textMultiLine" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/send_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_add_circle_white_24dp"
+                    app:backgroundTint="@color/color_primary"
+                    app:tint="@color/white" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- القائمة الجانبية للمحادثات -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/backgroundColor">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_new_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="محادثة جديدة"
+                android:layout_margin="16dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                app:fabSize="mini"
-                app:srcCompat="@drawable/ic_add_circle_white_24dp"
-                app:backgroundTint="@color/color_primary"
-                app:tint="@color/white" />
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+                android:text="تاريخ المحادثات"
+                android:padding="16dp"
+                android:textStyle="bold" />
 
-</LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/history_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

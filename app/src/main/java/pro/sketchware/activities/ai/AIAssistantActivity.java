@@ -13,11 +13,17 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import pro.sketchware.R;
 
+import androidx.drawerlayout.widget.DrawerLayout;
+import android.widget.ImageButton;
+
 public class AIAssistantActivity extends AppCompatActivity {
 
     private EditText aiInput;
     private FloatingActionButton sendButton;
     private RecyclerView chatRecyclerView;
+    private DrawerLayout drawerLayout;
+    private ImageButton btnAttach;
+    private ImageButton btnSelectProject;
     private a.a.a.DB db;
     private AIProjectEngine engine;
 
@@ -28,12 +34,15 @@ public class AIAssistantActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ai_assistant_activity);
 
+        drawerLayout = findViewById(R.id.drawer_layout);
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationOnClickListener(v -> finish());
+        toolbar.setNavigationOnClickListener(v -> drawerLayout.open());
 
         aiInput = findViewById(R.id.ai_input);
         sendButton = findViewById(R.id.send_button);
+        btnAttach = findViewById(R.id.btn_attach);
+        btnSelectProject = findViewById(R.id.btn_select_project);
         chatRecyclerView = findViewById(R.id.chat_recycler_view);
 
         sendButton.setOnClickListener(v -> {
@@ -44,6 +53,16 @@ public class AIAssistantActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "يرجى كتابة وصف التطبيق أولاً", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        btnAttach.setOnClickListener(v -> {
+            // منطق اختيار الملفات
+            Toast.makeText(this, "ميزة رفع الملفات قيد التطوير", Toast.LENGTH_SHORT).show();
+        });
+
+        btnSelectProject.setOnClickListener(v -> {
+            // منطق اختيار المشروع الحالي
+            Toast.makeText(this, "جاري جلب قائمة مشاريعك...", Toast.LENGTH_SHORT).show();
         });
     }
 
