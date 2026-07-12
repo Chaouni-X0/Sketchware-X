@@ -47,6 +47,10 @@
                 android:id="@+id/github_integration"
                 android:icon="@drawable/ic_github"
                 android:title="تكامل GitHub" />
+            <item
+                android:id="@+id/plugins_manager"
+                android:icon="@drawable/ic_mtrl_ad"
+                android:title="متجر الإضافات" />
         </menu>
     </item>
 

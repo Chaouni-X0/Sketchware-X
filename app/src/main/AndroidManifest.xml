@@ -280,6 +280,10 @@
             android:name="pro.sketchware.activities.github.GitHubIntegrationActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@style/Theme.SketchwarePro.SmallToolbar" />
+        <activity
+            android:name="pro.sketchware.activities.plugins.PluginsActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="متجر الإضافات" />
         <activity android:name="mod.jbk.editor.manage.library.ExcludeBuiltInLibrariesActivity" />
         <activity
             android:name="com.besome.sketch.editor.manage.view.PresetSettingActivity"
