@@ -19,9 +19,11 @@ public class AIAssistantActivity extends AppCompatActivity {
     private FloatingActionButton sendButton;
     private RecyclerView chatRecyclerView;
     private a.a.a.DB db;
+    private AIProjectEngine engine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        engine = new AIProjectEngine(this);
         db = new a.a.a.DB(this, "AI_CONFIG");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ai_assistant_activity);
@@ -55,9 +57,12 @@ public class AIAssistantActivity extends AppCompatActivity {
         // سيتم دمج الـ API الفعلي هنا لإرسال الـ prompt واستلام هيكل المشروع
         Toast.makeText(this, "جاري التواصل مع الذكاء الاصطناعي لإنشاء مشروعك...", Toast.LENGTH_LONG).show();
         
-        // محاكاة لعملية الإنشاء
+        // محاكاة لعملية الإنشاء الفعلية باستخدام المحرك
         new android.os.Handler().postDelayed(() -> {
-            Toast.makeText(this, "تم تحليل الطلب، جاري إنشاء البلوكات والتصاميم...", Toast.LENGTH_LONG).show();
-        }, 2000);
+            String mockResponse = "{\"views\": [{\"id\": \"btn_hello\", \"type\": \"Button\", \"text\": \"مرحباً بك في سكتشوير إكس\"}], \"logic\": [{\"event\": \"onClick\", \"blocks\": [{\"type\": \"toast\", \"spec\": \"مرحباً محمد الشاوني\"}]}]}";
+            // سيتم استبدال المسار بمسار المشروع الحالي
+            engine.processAIResponse(mockResponse, "/sdcard/.sketchware/data/last_project");
+            Toast.makeText(this, "تم إنشاء المشروع بنجاح! يمكنك الآن فتحه وتعديله.", Toast.LENGTH_LONG).show();
+        }, 3000);
     }
 }
