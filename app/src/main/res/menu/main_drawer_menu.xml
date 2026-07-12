@@ -43,6 +43,10 @@
                 android:id="@+id/ai_settings"
                 android:icon="@drawable/ic_mtrl_settings"
                 android:title="إعدادات الذكاء الاصطناعي" />
+            <item
+                android:id="@+id/github_integration"
+                android:icon="@drawable/ic_github"
+                android:title="تكامل GitHub" />
         </menu>
     </item>
 
