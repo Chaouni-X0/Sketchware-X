@@ -15,10 +15,10 @@ android {
         applicationId = "com.chaouni.sketchwarex"
         namespace = "pro.sketchware"
         //noinspection ExpiredTargetSdkVersion since we don't target getting Sketchware Pro on Google Play.
-        targetSdk = 28
+        targetSdk = 36
         minSdk = 26
-        versionCode = 150
-        versionName = "Sketchware X v1.0"
+        versionCode = 200
+        versionName = "Sketchware X Pro v2.0"
 
         buildConfigField("String", "GIT_HASH", "\"${gitCommitHash}\"")
 
