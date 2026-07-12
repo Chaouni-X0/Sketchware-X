@@ -84,6 +84,10 @@ public class MainDrawer extends NavigationView {
             Intent intent = new Intent(activity, pro.sketchware.activities.ai.AIAssistantActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             activity.startActivity(intent);
+        } else if (id == R.id.ai_settings) {
+            Intent intent = new Intent(activity, pro.sketchware.activities.ai.AISettingsActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            activity.startActivity(intent);
         } else if (id == R.id.about_team) {
             Intent intent = new Intent(activity, AboutActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);

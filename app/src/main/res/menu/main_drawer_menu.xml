@@ -39,6 +39,10 @@
                 android:id="@+id/ai_assistant"
                 android:icon="@drawable/ic_mtrl_ai"
                 android:title="مساعد الذكاء الاصطناعي" />
+            <item
+                android:id="@+id/ai_settings"
+                android:icon="@drawable/ic_mtrl_settings"
+                android:title="إعدادات الذكاء الاصطناعي" />
         </menu>
     </item>
 

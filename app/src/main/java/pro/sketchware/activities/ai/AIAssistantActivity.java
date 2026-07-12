@@ -18,9 +18,11 @@ public class AIAssistantActivity extends AppCompatActivity {
     private EditText aiInput;
     private FloatingActionButton sendButton;
     private RecyclerView chatRecyclerView;
+    private a.a.a.DB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        db = new a.a.a.DB(this, "AI_CONFIG");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ai_assistant_activity);
 
@@ -38,14 +40,24 @@ public class AIAssistantActivity extends AppCompatActivity {
                 handleUserPrompt(prompt);
                 aiInput.setText("");
             } else {
-                Toast.show(this, "يرجى كتابة وصف التطبيق أولاً", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "يرجى كتابة وصف التطبيق أولاً", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void handleUserPrompt(String prompt) {
-        // سيتم دمج الـ API الخاص بالذكاء الاصطناعي هنا لاحقاً
-        // في الوقت الحالي سنعرض رسالة تؤكد استلام الطلب
-        Toast.makeText(this, "جاري تحليل طلبك وإنشاء المشروع...", Toast.LENGTH_LONG).show();
+        String apiKey = db.a("api_key", "");
+        if (apiKey.isEmpty()) {
+            Toast.makeText(this, "يرجى إعداد مفتاح الـ API أولاً من الإعدادات", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        // سيتم دمج الـ API الفعلي هنا لإرسال الـ prompt واستلام هيكل المشروع
+        Toast.makeText(this, "جاري التواصل مع الذكاء الاصطناعي لإنشاء مشروعك...", Toast.LENGTH_LONG).show();
+        
+        // محاكاة لعملية الإنشاء
+        new android.os.Handler().postDelayed(() -> {
+            Toast.makeText(this, "تم تحليل الطلب، جاري إنشاء البلوكات والتصاميم...", Toast.LENGTH_LONG).show();
+        }, 2000);
     }
 }
