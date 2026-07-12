@@ -22,3 +22,5 @@ pro.sketchware:string/invalid_value_rule_4 = 0x7f0e05dd
 pro.sketchware:string/logic_editor_message_reserved_keywords = 0x7f0e0617
 pro.sketchware:string/logic_editor_message_variable_name_must_start_letter = 0x7f0e0619
 pro.sketchware:string/root_spec_common_when = 0x7f0e082a
+pro.sketchware:string/main_fab_new_project = 0x7f0e082b
+pro.sketchware:drawable/ic_mtrl_ai = 0x7f07037e
