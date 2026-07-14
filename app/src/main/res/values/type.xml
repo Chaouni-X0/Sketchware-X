@@ -30,4 +30,19 @@
     <style name="TextAppearance.SketchwarePro.LabelMedium" parent="TextAppearance.Material3.LabelMedium" />
 
     <style name="TextAppearance.SketchwarePro.LabelSmall" parent="TextAppearance.Material3.LabelSmall" />
+    <style name="TextAppearance.SketchwareX.DisplayLarge" parent="TextAppearance.SketchwarePro.DisplayLarge" />
+    <style name="TextAppearance.SketchwareX.DisplayMedium" parent="TextAppearance.SketchwarePro.DisplayMedium" />
+    <style name="TextAppearance.SketchwareX.DisplaySmall" parent="TextAppearance.SketchwarePro.DisplaySmall" />
+    <style name="TextAppearance.SketchwareX.HeadlineLarge" parent="TextAppearance.SketchwarePro.HeadlineLarge" />
+    <style name="TextAppearance.SketchwareX.HeadlineMedium" parent="TextAppearance.SketchwarePro.HeadlineMedium" />
+    <style name="TextAppearance.SketchwareX.HeadlineSmall" parent="TextAppearance.SketchwarePro.HeadlineSmall" />
+    <style name="TextAppearance.SketchwareX.TitleLarge" parent="TextAppearance.SketchwarePro.TitleLarge" />
+    <style name="TextAppearance.SketchwareX.TitleMedium" parent="TextAppearance.SketchwarePro.TitleMedium" />
+    <style name="TextAppearance.SketchwareX.TitleSmall" parent="TextAppearance.SketchwarePro.TitleSmall" />
+    <style name="TextAppearance.SketchwareX.BodyLarge" parent="TextAppearance.SketchwarePro.BodyLarge" />
+    <style name="TextAppearance.SketchwareX.BodyMedium" parent="TextAppearance.SketchwarePro.BodyMedium" />
+    <style name="TextAppearance.SketchwareX.BodySmall" parent="TextAppearance.SketchwarePro.BodySmall" />
+    <style name="TextAppearance.SketchwareX.LabelLarge" parent="TextAppearance.SketchwarePro.LabelLarge" />
+    <style name="TextAppearance.SketchwareX.LabelMedium" parent="TextAppearance.SketchwarePro.LabelMedium" />
+    <style name="TextAppearance.SketchwareX.LabelSmall" parent="TextAppearance.SketchwarePro.LabelSmall" />
 </resources>
