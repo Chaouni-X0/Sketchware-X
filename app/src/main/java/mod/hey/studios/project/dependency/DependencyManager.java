@@ -2,7 +2,7 @@ package mod.hey.studios.project.dependency;
 
 import java.util.ArrayList;
 import java.util.List;
-import a.a.a.FileUtil;
+import a.a.a.yq;
 import com.google.gson.Gson;
 
 public class DependencyManager {
@@ -21,14 +21,14 @@ public class DependencyManager {
         List<String> dependencies = getDependencies();
         if (!dependencies.contains(dependency)) {
             dependencies.add(dependency);
-            FileUtil.writeFile(path, gson.toJson(dependencies));
+            new yq().a(path, gson.toJson(dependencies));
         }
     }
 
     public List<String> getDependencies() {
         String path = projectPath + "/project.dependencies";
-        if (FileUtil.isExistFile(path)) {
-            return gson.fromJson(FileUtil.readFile(path), ArrayList.class);
+        if (new yq().e(path)) {
+            return gson.fromJson(new yq().f(path), ArrayList.class);
         }
         return new ArrayList<>();
     }
@@ -38,14 +38,14 @@ public class DependencyManager {
         List<String> repositories = getRepositories();
         if (!repositories.contains(url)) {
             repositories.add(url);
-            FileUtil.writeFile(path, gson.toJson(repositories));
+            new yq().a(path, gson.toJson(repositories));
         }
     }
 
     public List<String> getRepositories() {
         String path = projectPath + "/project.repositories";
-        if (FileUtil.isExistFile(path)) {
-            return gson.fromJson(FileUtil.readFile(path), ArrayList.class);
+        if (new yq().e(path)) {
+            return gson.fromJson(new yq().f(path), ArrayList.class);
         }
         return new ArrayList<>();
     }
