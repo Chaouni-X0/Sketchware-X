@@ -56,3 +56,58 @@
     <string name="ai_custom_endpoint_hint">نقطة النهاية المخصصة (اختياري)</string>
     <string name="ai_save_config">حفظ الإعدادات</string>
 </resources>
+
+    <!-- تعريب البلوكات المدمجة -->
+    <string name="block_add_list_int_head">أضف</string>
+    <string name="block_add_list_int_body_1">إلى</string>
+    <string name="block_add_list_map_head">أضف مفتاح</string>
+    <string name="block_add_list_map_body_1">بقيمة</string>
+    <string name="block_add_list_map_body_2">إلى</string>
+    <string name="block_add_list_str_head">أضف</string>
+    <string name="block_add_list_str_body_1">إلى</string>
+    <string name="block_add_source_directly_head">أضف كود مباشر</string>
+    <string name="block_and_body_1">و</string>
+    <string name="block_if_head">إذا</string>
+    <string name="block_if_tail">إذن</string>
+    <string name="block_if_else_head">إذا</string>
+    <string name="block_if_else_tail">إذن</string>
+    <string name="block_else_head">وإلا</string>
+    <string name="block_repeat_head">كرر</string>
+    <string name="block_forever_head">كرر باستمرار</string>
+    <string name="block_break_head">توقف</string>
+    <string name="block_do_toast_head">رسالة توست</string>
+    <string name="block_finish_activity_head">إنهاء</string>
+    <string name="block_finish_activity_tail">النشاط</string>
+    <string name="block_set_bg_color_body_1">تعيين لون الخلفية</string>
+    <string name="block_set_text_body_1">تعيين النص</string>
+    <string name="block_get_text_tail">الحصول على النص</string>
+    <string name="block_set_visible_body_1">تعيين الرؤية</string>
+    
+    <!-- تعريب المصطلحات العامة -->
+    <string name="common_word_add">إضافة</string>
+    <string name="common_word_save">حفظ</string>
+    <string name="common_word_delete">حذف</string>
+    <string name="common_word_edit">تعديل</string>
+    <string name="common_word_cancel">إلغاء</string>
+    <string name="common_word_ok">موافق</string>
+    <string name="common_word_create">إنشاء</string>
+    <string name="common_word_settings">الإعدادات</string>
+    <string name="common_word_share">مشاركة</string>
+    <string name="common_word_copy">نسخ</string>
+    <string name="common_word_next">التالي</string>
+    <string name="common_word_prev">السابق</string>
+    <string name="common_word_finish">إنهاء</string>
+    <string name="common_word_exit">خروج</string>
+    <string name="common_word_warning">تحذير</string>
+    <string name="common_word_error">خطأ</string>
+    <string name="common_word_success">نجاح</string>
+    <string name="common_word_loading">جاري التحميل...</string>
+    
+    <!-- تعريب مدراء الموارد -->
+    <string name="design_actionbar_title_manager_image">مدير الصور</string>
+    <string name="design_actionbar_title_manager_sound">مدير الأصوات</string>
+    <string name="design_actionbar_title_manager_font">مدير الخطوط</string>
+    <string name="design_actionbar_title_manager_view">مدير الواجهات</string>
+    <string name="design_actionbar_title_library">مدير المكتبات</string>
+    <string name="design_actionbar_title_show_source_code">عرض الكود المصدري</string>
+</resources>

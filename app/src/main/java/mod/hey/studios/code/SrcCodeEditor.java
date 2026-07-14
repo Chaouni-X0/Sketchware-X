@@ -121,7 +121,6 @@ public class SrcCodeEditor extends BaseAppCompatActivity {
 
     public static void selectLanguage(CodeEditor ed, int which) {
         switch (which) {
-            default:
             case 0:
                 ed.setEditorLanguage(new JavaLanguage());
                 languageId = 0;
@@ -136,8 +135,18 @@ public class SrcCodeEditor extends BaseAppCompatActivity {
                 ed.setEditorLanguage(CodeEditorLanguages.loadTextMateLanguage(CodeEditorLanguages.SCOPE_NAME_XML));
                 languageId = 2;
                 break;
+            
+            case 3:
+                // دعم كود C++ للمكونات الأصلية
+                ed.setEditorLanguage(CodeEditorLanguages.loadTextMateLanguage(CodeEditorLanguages.SCOPE_NAME_CPP));
+                languageId = 3;
+                break;
+                
+            default:
+                ed.setEditorLanguage(new JavaLanguage());
+                languageId = 0;
+                break;
         }
-
     }
 
     public static String prettifyXml(String xml, int indentAmount, Intent extras) {
@@ -252,7 +261,7 @@ public class SrcCodeEditor extends BaseAppCompatActivity {
                 .map(pair -> pair.first)
                 .toArray(String[]::new);
         new MaterialAlertDialogBuilder(activity)
-                .setTitle("Select Theme")
+                .setTitle("اختر السمة")
                 .setSingleChoiceItems(themeItems, selectedThemeIndex, listener)
                 .setNegativeButton(R.string.common_word_cancel, null)
                 .show();
@@ -262,11 +271,12 @@ public class SrcCodeEditor extends BaseAppCompatActivity {
         CharSequence[] languagesList = {
                 "Java",
                 "Kotlin",
-                "XML"
+                "XML",
+                "C++ (Native)"
         };
 
         new MaterialAlertDialogBuilder(activity)
-                .setTitle("Select Language")
+                .setTitle("اختر لغة البرمجة")
                 .setSingleChoiceItems(languagesList, languageId, listener)
                 .setNegativeButton(R.string.common_word_cancel, null)
                 .show();
@@ -341,7 +351,7 @@ public class SrcCodeEditor extends BaseAppCompatActivity {
                     if (activitiesComponents.get(i).get("name").equals(activityName)) {
                         activitiesComponents.get(i).put("value", beforeContent);
                         FileUtil.writeFile(filePath, getGson().toJson(activitiesComponents));
-                        SketchwareUtil.toast("Saved");
+                        SketchwareUtil.toast("تم الحفظ بنجاح");
                         return;
                     }
                 }
@@ -360,7 +370,7 @@ public class SrcCodeEditor extends BaseAppCompatActivity {
             }
         } else FileUtil.writeFile(getIntent().getStringExtra("content"), beforeContent);
 
-        SketchwareUtil.toast("Saved");
+        SketchwareUtil.toast("تم الحفظ بنجاح");
     }
 
     @Override
