@@ -103,6 +103,10 @@
     <string name="property_description_component_intent_usage">Usage description for Intent component.</string>
     <string name="logic_more_block_desc_add_variable_resource">Add variables to your moreblock.</string>
     <string name="common_message_insufficient_storage_space">Insufficient storage space.</string>
+    <string name="logic_editor_message_currently_used_block">This block is currently used.</string>
+    <string name="common_message_permission_storage1">Storage permission is required to continue.</string>
+    <string name="design_manager_image_description_guide_add_image">Add images to your project.</string>
+    <string name="design_library_google_maps_description_operate_normally">Google Maps is operating normally.</string>
     <string name="block_dialog_cancel_button_body_1">Cancel Button</string>
     <string name="block_dialog_cancel_button_tail">Clicked</string>
     <string name="block_dialog_dismiss_tail">dismiss</string>
