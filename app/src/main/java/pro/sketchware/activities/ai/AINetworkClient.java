@@ -19,10 +19,17 @@ public class AINetworkClient {
     private OkHttpClient client;
     private String apiKey;
     private String baseUrl;
+    private String model;
 
     public AINetworkClient(String apiKey, String baseUrl) {
-        this.apiKey = apiKey;
-        this.baseUrl = baseUrl;
+        this(apiKey, baseUrl, "gpt-4o-mini");
+    }
+
+    public AINetworkClient(String apiKey, String baseUrl, String model) {
+        this.apiKey = apiKey == null ? "" : apiKey.trim();
+        String endpoint = baseUrl == null ? "" : baseUrl.trim();
+        this.baseUrl = endpoint.replaceAll("/+$", "");
+        this.model = model == null || model.trim().isEmpty() ? "gpt-4o-mini" : model.trim();
         this.client = new OkHttpClient.Builder()
                 .connectTimeout(30, TimeUnit.SECONDS)
                 .readTimeout(30, TimeUnit.SECONDS)
@@ -31,9 +38,17 @@ public class AINetworkClient {
     }
 
     public void sendPrompt(String prompt, AICallback callback) {
+        if (prompt == null || prompt.trim().isEmpty()) {
+            callback.onFailure(new IllegalArgumentException("Prompt cannot be empty"));
+            return;
+        }
+        if (apiKey.isEmpty() || baseUrl.isEmpty()) {
+            callback.onFailure(new IllegalStateException("AI API configuration is incomplete"));
+            return;
+        }
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("model", "gpt-3.5-turbo"); // يمكن تغيير النموذج حسب الحاجة
+            jsonBody.put("model", model);
             JSONObject message = new JSONObject();
             message.put("role", "user");
             message.put("content", prompt);

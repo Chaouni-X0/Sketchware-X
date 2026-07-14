@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Compatibility aliases for projects and screens created by the previous app version. -->
+    <style name="Scheme.SketchwareX.DayNight" parent="Scheme.SketchwarePro.DayNight" />
+
+    <style name="Base.Theme.SketchwarePro" parent="Base.Theme.SketchwareX" />
+    <style name="Theme.SketchwarePro" parent="Theme.SketchwareX" />
+    <style name="Theme.SketchwarePro.Main" parent="Theme.SketchwareX.Main" />
+    <style name="Theme.SketchwarePro.ProjectPreview" parent="Theme.SketchwareX.ProjectPreview" />
+    <style name="Theme.SketchwarePro.SmallToolbar" parent="Theme.SketchwareX.SmallToolbar" />
+    <style name="Theme.SketchwarePro.Starting.Base" parent="Theme.SketchwareX.Starting.Base" />
+    <style name="Theme.SketchwarePro.Starting" parent="Theme.SketchwareX.Starting" />
+    <style name="Platform.V21.Theme.SketchwarePro" parent="Platform.V21.Theme.SketchwareX" />
+    <style name="Platform.Theme.SketchwarePro" parent="Platform.Theme.SketchwareX" />
+</resources>

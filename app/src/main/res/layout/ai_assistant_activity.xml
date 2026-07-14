@@ -25,8 +25,41 @@
                 app:navigationIcon="@drawable/abc_ic_menu_overflow_material" />
         </com.google.android.material.appbar.AppBarLayout>
 
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/context_chips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/provider_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ai_choose_api" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/project_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ai_no_project" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/create_app_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="@string/ai_create_app" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/chat_transcript"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:textIsSelectable="true"
+            android:text="@string/ai_welcome" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/chat_recycler_view"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"

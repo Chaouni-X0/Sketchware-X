@@ -176,6 +176,15 @@ public class MyProjectSettingActivity extends BaseAppCompatActivity implements V
             binding.etPackageName.setText(newProjectPackageName);
             binding.etProjectName.setText(newProjectName);
             binding.etAppName.setText(getIntent().getStringExtra("my_app_name"));
+            // Keep the approved AI blueprint attached until project creation finishes.
+            String aiBlueprint = getIntent().getStringExtra("ai_blueprint");
+            String preferredLanguage = getIntent().getStringExtra("preferred_language");
+            if (aiBlueprint != null) {
+                getSharedPreferences("pending_ai_project", MODE_PRIVATE).edit()
+                        .putString("blueprint_" + sc_id, aiBlueprint)
+                        .putString("language_" + sc_id, preferredLanguage == null ? "java" : preferredLanguage)
+                        .apply();
+            }
 
             String newProjectVersionCode = getIntent().getStringExtra("sc_ver_code");
             String newProjectVersionName = getIntent().getStringExtra("sc_ver_name");

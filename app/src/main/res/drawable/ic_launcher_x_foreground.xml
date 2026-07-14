@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="@color/sketchware_x_icon_foreground"
+        android:pathData="M28,24 L44,24 L54,40 L64,24 L80,24 L62,52 L82,84 L66,84 L54,64 L42,84 L26,84 L46,52 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:fillAlpha="0.92"
+        android:pathData="M20,18 L38,18 L38,24 L26,24 L26,36 L20,36 Z M70,78 L88,78 L88,90 L82,90 L82,84 L70,84 Z" />
+</vector>

@@ -2,6 +2,7 @@
     <string name="app_name">Sketchware X</string>
     <string name="title_sketchware">Sketchware X</string>
     <string name="about_title">About Sketchware X</string>
+    <string name="app_description">Build Android apps visually with blocks, code, plugins, Git and AI tools.</string>
     <string name="link_github_release">https://github.com/Chaouni-X0/Sketchware-X/releases</string>
     <string name="link_docs_url">https://sketchware-x.chaouni.dev</string>
     <string name="link_discord_invite">https://discord.gg/sketchware-x</string>
@@ -19,6 +20,28 @@
     <string name="ai_assistant_title">AI Assistant</string>
     <string name="ai_chat_hint">Type your message...</string>
     <string name="ai_send">Send</string>
+    <string name="menu_github_manager">GitHub Manager</string>
+    <string name="app_version_label">v7.1.0 · X Edition</string>
+    <string name="menu_ai_assistant">AI Assistant</string>
+    <string name="menu_about_team">About the team</string>
+    <string name="menu_changelog">Changelog</string>
+    <string name="menu_app_information">App information</string>
+    <string name="menu_create_keystore">Create keystore</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_cloud_build">Cloud Build</string>
+    <string name="menu_marketplace">Marketplace</string>
+    <string name="menu_apps">Apps</string>
+    <string name="menu_related_links">Related links</string>
+    <string name="ai_choose_api">Choose API</string>
+    <string name="ai_no_project">No project</string>
+    <string name="ai_create_app">Create App</string>
+    <string name="ai_welcome">Ask anything, or select a Sketchware X project to request changes.</string>
+    <string name="source_editor_title">Source Editor</string>
+    <string name="code_viewer_title">Code Viewer</string>
+    <string name="source_unsaved_title">Unsaved changes</string>
+    <string name="source_unsaved_message">Save your source changes before closing?</string>
+    <string name="source_discard">Discard</string>
+    <string name="source_saved_backup">Saved · backup created</string>
     <string name="design_manager_sound_description_guide_add_sound">Click the button below to add a new sound to your project.</string>
     <string name="developer_tools_component_description_guide_add_component">Add components to extend the functionality of your app.</string>
     <string name="design_library_firebase_guide_path_example">Example: users/profile</string>
@@ -1686,7 +1709,7 @@
     <string name="about_loading_subtitle">Don\'t worry, it won\'t take more than a second.</string>
     <string name="about_joindiscord">Join our Discord server</string>
     <string name="link_ideas_url">https://discord.gg/4uxhMwCt</string>
-    <string name="link_github_commits_url"><![CDATA[https://api.github.com/repos/Sketchware-Pro/Sketchware-Pro/commits?per_page=%s&page=%s]]></string>
+    <string name="link_github_commits_url" formatted="false"><![CDATA[https://api.github.com/repos/Sketchware-Pro/Sketchware-Pro/commits?per_page=%s&page=%s]]></string>
     <string name="github_api_error_message">Something went wrong. Please wait and try again.</string>
     <string name="github_api_date_unavailable">Date unavailable</string>
     <string name="change_launcher_activity_dialog_title">Launcher Activity</string>

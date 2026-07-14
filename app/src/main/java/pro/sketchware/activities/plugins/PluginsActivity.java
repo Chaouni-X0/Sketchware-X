@@ -30,8 +30,29 @@ public class PluginsActivity extends BaseAppCompatActivity {
         btnInstall.setOnClickListener(v -> {
             String url = etRepoUrl.getText().toString();
             if (!url.isEmpty()) {
-                pluginManager.installPluginFromGitHub(url);
-                Toast.makeText(this, "بدء تحميل الإضافة...", Toast.LENGTH_SHORT).show();
+                btnInstall.setEnabled(false);
+                btnInstall.setText("جاري التثبيت…");
+                pluginManager.installPluginFromGitHub(url, new PluginManager.InstallCallback() {
+                    @Override
+                    public void onSuccess(String pluginName) {
+                        runOnUiThread(() -> {
+                            btnInstall.setEnabled(true);
+                            btnInstall.setText("تثبيت إضافة جديدة");
+                            Toast.makeText(PluginsActivity.this,
+                                    "تم تثبيت " + pluginName, Toast.LENGTH_LONG).show();
+                        });
+                    }
+
+                    @Override
+                    public void onFailure(Exception error) {
+                        runOnUiThread(() -> {
+                            btnInstall.setEnabled(true);
+                            btnInstall.setText("تثبيت إضافة جديدة");
+                            Toast.makeText(PluginsActivity.this,
+                                    "فشل التثبيت: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                        });
+                    }
+                });
             }
         });
         layout.addView(btnInstall);
