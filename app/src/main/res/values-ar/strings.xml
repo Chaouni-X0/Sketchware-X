@@ -7,7 +7,7 @@
     <string name="about_loading_title">جاري جلب البيانات...</string>
     <string name="about_joindiscord">انضم إلى خادم الديسكورد الخاص بنا</string>
     <string name="ai_assistant_title">مساعد الذكاء الاصطناعي</string>
-    <string name="ai_chat_hint">صف مشروعك هنا...</string>
+    <string name="ai_chat_hint">اكتب رسالتك هنا...</string>
     <string name="ai_send">إرسال</string>
     <string name="link_github_release">https://github.com/Sketchware-X/Sketchware-X/releases</string>
     <string name="link_docs_url">https://docs.sketchware-x.pro</string>
@@ -19,9 +19,6 @@
     <string name="main_fab_new_project">مشروع جديد</string>
     <string name="design_library_material_3_theme_mode_description">تكوين مظهر وسلوك مكونات Material 3 في مشروعك.</string>
     <string name="design_manager_font_description_example_sentence">الثعلب البني السريع يقفز فوق الكلب الكسول.</string>
-    <string name="ai_assistant_title">مساعد الذكاء الاصطناعي</string>
-    <string name="ai_chat_hint">اكتب رسالتك هنا...</string>
-    <string name="ai_send">إرسال</string>
     <string name="design_manager_sound_description_guide_add_sound">انقر فوق الزر أدناه لإضافة صوت جديد إلى مشروعك.</string>
     <string name="developer_tools_component_description_guide_add_component">أضف مكونات لتوسيع وظائف تطبيقك.</string>
     <string name="about_beta_changes_title">تغييرات النسخة التجريبية</string>
