@@ -14,7 +14,7 @@ android {
     defaultConfig {
         applicationId = "pro.sketchware.x"
         namespace = "pro.sketchware"
-        //noinspection ExpiredTargetSdkVersion since we don't target getting Sketchware Pro on Google Play.
+        //noinspection ExpiredTargetSdkVersion since we don't target getting Sketchware-X on Google Play.
         targetSdk = 34
         minSdk = 26
         versionCode = 150

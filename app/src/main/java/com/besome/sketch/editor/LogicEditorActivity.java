@@ -2467,11 +2467,11 @@ public class LogicEditorActivity extends BaseAppCompatActivity implements View.O
         yq yq = new yq(this, scId);
         yq.a(jC.c(scId), jC.b(scId), jC.a(scId));
         String code = new Fx(M.getActivityName(), yq.N, o.getBlocks(), isViewBindingEnabled).a();
-        Intent intent = new Intent(this, CodeViewerActivity.class);
-        intent.putExtra("code", code);
+        Intent intent = new Intent(this, mod.hey.studios.code.SrcCodeEditor.class);
+        intent.putExtra("content", code);
         intent.putExtra("sc_id", scId);
-        intent.putExtra("scheme", CodeViewerActivity.SCHEME_JAVA);
-        intent.putExtra("is_editable", true);
+        intent.putExtra("project_file", (Parcelable) M);
+        intent.putExtra("title", M.getJavaName());
         startActivity(intent);
     }
 

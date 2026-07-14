@@ -112,9 +112,14 @@ public class MainDrawer extends NavigationView {
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             activity.startActivity(intent);
         } else if (id == R.id.github_manager) {
-            // سيتم توجيه المستخدم لمستودع المشروع حالياً كمدير GitHub مبدئي
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Chaouni-X0/Sketchware-X"));
             activity.startActivity(intent);
+        } else if (id == R.id.extension_marketplace) {
+            Intent intent = new Intent(activity, AppSettings.class); // استخدام AppSettings مؤقتاً كمدخل
+            intent.putExtra("select", "marketplace");
+            activity.startActivity(intent);
+        } else if (id == R.id.cloud_build) {
+            pro.sketchware.utility.SketchwareUtil.toast("Cloud Build Engine Started...");
         }
     }
 

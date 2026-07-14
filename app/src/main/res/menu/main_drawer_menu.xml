@@ -34,6 +34,14 @@
         android:id="@+id/github_manager"
         android:icon="@drawable/ic_github"
         android:title="@string/menu_github_manager" />
+    <item
+        android:id="@+id/cloud_build"
+        android:icon="@drawable/ic_mtrl_update"
+        android:title="Cloud Build" />
+    <item
+        android:id="@+id/extension_marketplace"
+        android:icon="@drawable/ic_mtrl_palette"
+        android:title="Marketplace" />
     <item android:title="Apps">
         <menu>
             <item

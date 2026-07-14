@@ -29,13 +29,6 @@
     <string name="about_info_developer">المطور: محمد الشاوني</string>
     <string name="about_info_email">البريد الإلكتروني: chaouni.dev@gmail.com</string>
     <string name="about_info_description">سكتشوير إكس هو نسخة مطورة من سكتشوير برو، مع دعم كامل للغة العربية وميزات الذكاء الاصطناعي التفاعلية.</string>
-    <string name="common_word_save">حفظ</string>
-    <string name="common_word_delete">حذف</string>
-    <string name="common_word_edit">تعديل</string>
-    <string name="common_word_cancel">إلغاء</string>
-    <string name="common_word_ok">موافق</string>
-    <string name="common_word_create">إنشاء</string>
-    <string name="common_word_settings">الإعدادات</string>
     <string name="main_drawer_title_my_projects">مشاريعي</string>
     <string name="main_drawer_title_tutorials">الدروس</string>
     <string name="main_drawer_title_settings">الإعدادات</string>
@@ -55,7 +48,6 @@
     <string name="ai_model_hint">اختر النموذج (مثلاً: gpt-4)</string>
     <string name="ai_custom_endpoint_hint">نقطة النهاية المخصصة (اختياري)</string>
     <string name="ai_save_config">حفظ الإعدادات</string>
-</resources>
 
     <!-- تعريب البلوكات المدمجة -->
     <string name="block_add_list_int_head">أضف</string>
@@ -111,4 +103,9 @@
     <string name="design_actionbar_title_library">مدير المكتبات</string>
     <string name="design_actionbar_title_show_source_code">عرض الكود المصدري</string>
     <string name="menu_github_manager">مدير GitHub</string>
+    <string name="menu_cloud_build">البناء السحابي</string>
+    <string name="menu_marketplace">متجر الإضافات</string>
+    <string name="theme_pure_black">الأسود الصرف (AMOLED)</string>
+    <string name="ai_fix_code">إصلاح الكود بالذكاء الاصطناعي</string>
+    <string name="auto_documentation">توليد التوثيق تلقائياً</string>
 </resources>
