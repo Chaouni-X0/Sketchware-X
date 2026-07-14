@@ -15,6 +15,10 @@ import pro.sketchware.R;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 import android.widget.ImageButton;
+import pro.sketchware.activities.ai.AINetworkClient;
+import pro.sketchware.activities.ai.AINetworkClient.AICallback;
+import android.os.Handler;
+import android.os.Looper;
 
 public class AIAssistantActivity extends AppCompatActivity {
 
@@ -26,11 +30,15 @@ public class AIAssistantActivity extends AppCompatActivity {
     private ImageButton btnSelectProject;
     private a.a.a.DB db;
     private AIProjectEngine engine;
+    private AINetworkClient aiNetworkClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         engine = new AIProjectEngine(this);
         db = new a.a.a.DB(this, "AI_CONFIG");
+        String apiKey = db.a("api_key", "");
+        String baseUrl = db.a("api_base_url", "https://api.openai.com"); // Default to OpenAI
+        aiNetworkClient = new AINetworkClient(apiKey, baseUrl);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ai_assistant_activity);
 
@@ -75,22 +83,22 @@ public class AIAssistantActivity extends AppCompatActivity {
 
         Toast.makeText(this, "جاري التواصل مع الذكاء الاصطناعي لإنشاء مشروعك...", Toast.LENGTH_LONG).show();
         
-        // هنا سيتم استدعاء API الذكاء الاصطناعي (مثل OpenAI أو Gemini)
-        // في الوقت الحالي، سنقوم بمحاكاة استجابة أكثر تعقيداً تعتمد على الـ prompt
-        new android.os.Handler().postDelayed(() -> {
-            String mockResponse = generateMockResponseBasedOnPrompt(prompt);
-            // سيتم استبدال المسار بمسار المشروع الحالي
-            engine.processAIResponse(mockResponse, "/sdcard/.sketchware/data/last_project");
-            Toast.makeText(this, "تم إنشاء المشروع بنجاح! يمكنك الآن فتحه وتعديله.", Toast.LENGTH_LONG).show();
-        }, 3000);
-    }
+        aiNetworkClient.sendPrompt(prompt, new AICallback() {
+            @Override
+            public void onSuccess(String response) {
+                new Handler(Looper.getMainLooper()).post(() -> {
+                    // سيتم استبدال المسار بمسار المشروع الحالي
+                    engine.processAIResponse(response, "/sdcard/.sketchware/data/last_project");
+                    Toast.makeText(AIAssistantActivity.this, "تم إنشاء المشروع بنجاح! يمكنك الآن فتحه وتعديله.", Toast.LENGTH_LONG).show();
+                });
+            }
 
-    private String generateMockResponseBasedOnPrompt(String prompt) {
-        // هذا مجرد محاكاة بسيطة. في التطبيق الفعلي، سيعود هذا من الـ API.
-        if (prompt.toLowerCase().contains("تسجيل الدخول") || prompt.toLowerCase().contains("login")) {
-            return "{\"views\": [{\"id\": \"et_email\", \"type\": \"EditText\", \"text\": \"البريد الإلكتروني\", \"attributes\": {\"layout_width\": \"match_parent\", \"margin_bottom\": \"16dp\"}}, {\"id\": \"et_password\", \"type\": \"EditText\", \"text\": \"كلمة المرور\", \"attributes\": {\"layout_width\": \"match_parent\", \"margin_bottom\": \"16dp\"}}, {\"id\": \"btn_login\", \"type\": \"Button\", \"text\": \"تسجيل الدخول\", \"attributes\": {\"layout_width\": \"match_parent\", \"background_color\": \"#FF6200EE\", \"text_color\": \"#FFFFFF\"}}], \"logic\": [{\"event\": \"onClick\", \"blocks\": [{\"type\": \"toast\", \"spec\": \"جاري تسجيل الدخول...\"}]}]}";
-        } else {
-            return "{\"views\": [{\"id\": \"tv_welcome\", \"type\": \"TextView\", \"text\": \"مرحباً بك في سكتشوير إكس\", \"attributes\": {\"layout_width\": \"wrap_content\", \"text_color\": \"#FF000000\"}}, {\"id\": \"btn_action\", \"type\": \"Button\", \"text\": \"اضغط هنا\", \"attributes\": {\"layout_width\": \"match_parent\", \"margin_top\": \"16dp\"}}], \"logic\": [{\"event\": \"onClick\", \"blocks\": [{\"type\": \"toast\", \"spec\": \"تم الضغط على الزر!\"}]}]}";
-        }
-    }
+            @Override
+            public void onFailure(Exception e) {
+                new Handler(Looper.getMainLooper()).post(() -> {
+                    Toast.makeText(AIAssistantActivity.this, "فشل التواصل مع الذكاء الاصطناعي: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                });
+            }
+        });
 }
