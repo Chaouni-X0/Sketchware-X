@@ -101,4 +101,5 @@ public class AIAssistantActivity extends AppCompatActivity {
                 });
             }
         });
+    }
 }

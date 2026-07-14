@@ -127,7 +127,6 @@ public class AIProjectEngine {
             return 0;
         }
     }
-    }
 
     private void createLogic(List<Map<String, Object>> logicList, String projectPath) {
         ArrayList<BlockBean> blockBeans = new ArrayList<>();
