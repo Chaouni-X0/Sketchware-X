@@ -17,6 +17,8 @@
     <string name="link_github_url">https://github.com/Sketchware-X/Sketchware-X</string>
     <string name="ai_chat_title">مساعد الذكاء الاصطناعي</string>
     <string name="main_fab_new_project">مشروع جديد</string>
+    <string name="design_library_material_3_theme_mode_description">تكوين مظهر وسلوك مكونات Material 3 في مشروعك.</string>
+    <string name="design_manager_font_description_example_sentence">الثعلب البني السريع يقفز فوق الكلب الكسول.</string>
     <string name="about_beta_changes_title">تغييرات النسخة التجريبية</string>
     <string name="about_info_developer">المطور: محمد الشاوني</string>
     <string name="about_info_email">البريد الإلكتروني: chaouni.dev@gmail.com</string>

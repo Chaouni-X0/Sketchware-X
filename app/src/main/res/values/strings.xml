@@ -13,6 +13,8 @@
     <string name="link_qwen">https://github.com/Qwen/Sketchware</string>
     <string name="ai_chat_title">AI Assistant</string>
     <string name="main_fab_new_project">New Project</string>
+    <string name="design_library_material_3_theme_mode_description">Configure the appearance and behavior of Material 3 components in your project.</string>
+    <string name="design_manager_font_description_example_sentence">The quick brown fox jumps over the lazy dog.</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="besome_blog_url">http://medium.com/sketchware</string>
     <string name="block_add_list_int_body_1">to</string>
