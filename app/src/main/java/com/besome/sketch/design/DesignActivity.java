@@ -624,7 +624,7 @@ public class DesignActivity extends BaseAppCompatActivity implements View.OnClic
             searchItem.setVisible(currentTabNumber == 1);
         }
         menu.add(0, 888, 0, "المعاينة المباشرة (Live Preview)")
-            .setIcon(R.drawable.ic_visibility_black_24dp)
+            .setIcon(R.drawable.ic_mtrl_preview)
             .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         return true;
     }
