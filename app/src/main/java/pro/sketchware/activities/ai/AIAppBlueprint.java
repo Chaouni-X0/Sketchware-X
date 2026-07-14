@@ -41,7 +41,11 @@ public final class AIAppBlueprint {
                 text.append("• ").append(questions.optString(i)).append('\n');
             return text.toString();
         }
-        return "App blueprint ready\n\n" + data.toString(2);
+        try {
+            return "App blueprint ready\n\n" + data.toString(2);
+        } catch (org.json.JSONException e) {
+            return "App blueprint ready\n\n" + data.toString();
+        }
     }
 
     private static void requireArray(JSONObject object, String name) {
