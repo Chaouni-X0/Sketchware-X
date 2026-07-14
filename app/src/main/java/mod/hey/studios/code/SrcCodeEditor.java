@@ -542,7 +542,7 @@ public class SrcCodeEditor extends BaseAppCompatActivity {
         }
     }
 
-//     private void aiFixCode() {
+    private void aiFixCode() {
         SketchwareUtil.toast("AI Fix is currently being updated...");
     }
 
