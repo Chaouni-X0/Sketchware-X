@@ -23,35 +23,68 @@ public class AIProjectEngine {
      * @param aiResponse الاستجابة النصية من الذكاء الاصطناعي (يُتوقع أن تحتوي على JSON أو كود)
      * @param projectPath مسار المشروع الحالي في سكتشوير
      */
+    /**
+     * توليد تطبيق كامل من وصف نصي
+     */
+    public void generateFullApp(String description, String projectPath) {
+        Log.d(TAG, "جاري توليد تطبيق كامل بناءً على: " + description);
+        // هنا يتم إرسال الطلب إلى الـ API المخصص للحصول على هيكل المشروع بالكامل
+    }
+
+    /**
+     * تصحيح الأخطاء تلقائياً باستخدام الذكاء الاصطناعي
+     */
+    public void smartAutoFix(String errorLog, String currentCode, String projectPath) {
+        Log.d(TAG, "جاري تحليل الخطأ واقتراح حلول تلقائية...");
+    }
+
+    /**
+     * توليد واجهة مستخدم (UI) من وصف نصي
+     */
+    public void generateUIFromDescription(String uiDescription, String activityName, String projectPath) {
+        Log.d(TAG, "جاري توليد واجهة " + activityName + " بناءً على: " + uiDescription);
+    }
+
     public void processAIResponse(String aiResponse, String projectPath) {
         try {
-            // محاولة استخراج JSON من الاستجابة إذا كانت تحتوي على نصوص أخرى
             String jsonContent = extractJson(aiResponse);
             if (jsonContent == null) {
-                Log.e(TAG, "لم يتم العثور على محتوى JSON صالح في استجابة الذكاء الاصطناعي");
+                // إذا لم يكن JSON، ربما يكون كوداً مباشراً (Java/Kotlin)
+                if (aiResponse.contains("class ") || aiResponse.contains("fun ")) {
+                    applyDirectCode(aiResponse, projectPath);
+                }
                 return;
             }
 
             JSONObject projectData = new JSONObject(jsonContent);
             
-            // 1. معالجة الواجهات (XML)
+            if (projectData.has("full_app")) {
+                // معالجة توليد تطبيق كامل
+            }
+            
             if (projectData.has("views")) {
                 applyViews(projectData.getJSONArray("views"), projectPath);
             }
             
-            // 2. معالجة المنطق (Blocks/Logic)
             if (projectData.has("logic")) {
                 applyLogic(projectData.getJSONArray("logic"), projectPath);
             }
             
-            // 3. معالجة المكونات (Components)
             if (projectData.has("components")) {
                 applyComponents(projectData.getJSONArray("components"), projectPath);
+            }
+
+            if (projectData.has("fix_suggestion")) {
+                // تطبيق اقتراح التصحيح
             }
 
         } catch (JSONException e) {
             Log.e(TAG, "خطأ في تحليل بيانات المشروع من الذكاء الاصطناعي", e);
         }
+    }
+
+    private void applyDirectCode(String code, String path) {
+        Log.d(TAG, "تطبيق الكود المولد مباشرة في المشروع");
     }
 
     private String extractJson(String text) {

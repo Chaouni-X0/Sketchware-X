@@ -2463,6 +2463,18 @@ public class LogicEditorActivity extends BaseAppCompatActivity implements View.O
         startActivity(intent);
     }
 
+    private void switchToCodeEditor() {
+        yq yq = new yq(this, scId);
+        yq.a(jC.c(scId), jC.b(scId), jC.a(scId));
+        String code = new Fx(M.getActivityName(), yq.N, o.getBlocks(), isViewBindingEnabled).a();
+        Intent intent = new Intent(this, CodeViewerActivity.class);
+        intent.putExtra("code", code);
+        intent.putExtra("sc_id", scId);
+        intent.putExtra("scheme", CodeViewerActivity.SCHEME_JAVA);
+        intent.putExtra("is_editable", true);
+        startActivity(intent);
+    }
+
     public void t() {
         fa = ObjectAnimator.ofFloat(O, View.TRANSLATION_X, 0.0f);
         fa.setDuration(500L);

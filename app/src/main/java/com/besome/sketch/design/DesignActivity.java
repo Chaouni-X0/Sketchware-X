@@ -432,6 +432,13 @@ public class DesignActivity extends BaseAppCompatActivity implements View.OnClic
         projectSaver.execute();
     }
 
+    private void startLivePreview() {
+        Intent intent = new Intent(this, pro.sketchware.activities.editor.view.ViewCodeEditorActivity.class);
+        intent.putExtra("sc_id", sc_id);
+        intent.putExtra("project_file", (android.os.Parcelable) projectFile);
+        startActivity(intent);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         enableEdgeToEdgeNoContrast();
@@ -616,6 +623,9 @@ public class DesignActivity extends BaseAppCompatActivity implements View.OnClic
         if (searchItem != null) {
             searchItem.setVisible(currentTabNumber == 1);
         }
+        menu.add(0, 888, 0, "المعاينة المباشرة (Live Preview)")
+            .setIcon(R.drawable.ic_visibility_white_24dp)
+            .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         return true;
     }
 
@@ -632,6 +642,9 @@ public class DesignActivity extends BaseAppCompatActivity implements View.OnClic
             if (eventTabAdapter != null) {
                 eventTabAdapter.toggleSearchBar();
             }
+            return true;
+        } else if (itemId == 888) {
+            startLivePreview();
             return true;
         }
 
