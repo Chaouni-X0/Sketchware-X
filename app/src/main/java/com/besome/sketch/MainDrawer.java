@@ -27,7 +27,6 @@ import dev.chrisbanes.insetter.Side;
 import mod.hilal.saif.activities.tools.AppSettings;
 import pro.sketchware.R;
 import pro.sketchware.activities.about.AboutActivity;
-import pro.sketchware.utility.SketchwareUtil;
 import pro.sketchware.utility.UI;
 
 public class MainDrawer extends NavigationView {
@@ -68,12 +67,19 @@ public class MainDrawer extends NavigationView {
 
     private void initializeSocialLinks(@IdRes int id) {
         if (!mB.a()) {
-            if (id == R.id.social_telegram) {
-                openUrl("https://t.me/chaouni_dev");
+            @StringRes int url = -1;
+            if (id == R.id.social_discord) {
+                url = R.string.link_discord_invite;
+            } else if (id == R.id.social_telegram) {
+                url = R.string.link_telegram_invite;
             } else if (id == R.id.social_github) {
-                openUrl("https://github.com/chaouni-dev");
+                url = R.string.link_github_url;
             } else if (id == R.id.app_sw_assist) {
-                openUrl(getContext().getString(R.string.link_sw_assist));
+                url = R.string.link_sw_assist;
+            }
+
+            if (url != -1) {
+                openUrl(getContext().getString(url));
             }
         }
     }
@@ -81,19 +87,7 @@ public class MainDrawer extends NavigationView {
     private void initializeDrawerItems(@IdRes int id) {
         Activity activity = unwrap(getContext());
         if (id == R.id.ai_assistant) {
-            Intent intent = new Intent(activity, pro.sketchware.activities.ai.AIAssistantActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            activity.startActivity(intent);
-        } else if (id == R.id.ai_settings) {
-            Intent intent = new Intent(activity, pro.sketchware.activities.ai.AISettingsActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            activity.startActivity(intent);
-        } else if (id == R.id.github_integration) {
-            Intent intent = new Intent(activity, pro.sketchware.activities.github.GitHubIntegrationActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            activity.startActivity(intent);
-        } else if (id == R.id.plugins_manager) {
-            Intent intent = new Intent(activity, pro.sketchware.activities.plugins.PluginsActivity.class);
+            Intent intent = new Intent(activity, pro.sketchware.activities.ai.AIChatActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             activity.startActivity(intent);
         } else if (id == R.id.about_team) {

@@ -142,17 +142,7 @@ public class ProjectsFragment extends DA {
         preference = new DB(requireContext(), "project");
 
         ExtendedFloatingActionButton fab = requireActivity().findViewById(R.id.create_new_project);
-        fab.setOnClickListener((v) -> {
-            new com.google.android.material.dialog.MaterialAlertDialogBuilder(requireContext())
-                .setTitle("إنشاء مشروع جديد")
-                .setMessage("كيف تود إنشاء مشروعك الجديد؟")
-                .setPositiveButton("إنشاء عادي", (dialog, which) -> toProjectSettingsActivity())
-                .setNegativeButton("بالذكاء الاصطناعي (AI)", (dialog, which) -> {
-                    android.content.Intent intent = new android.content.Intent(requireContext(), pro.sketchware.activities.ai.AIAssistantActivity.class);
-                    startActivity(intent);
-                })
-                .show();
-        });
+        fab.setOnClickListener((v) -> toProjectSettingsActivity());
         Insetter.builder().margin(WindowInsetsCompat.Type.navigationBars()).applyToView(fab);
 
         binding.swipeRefresh.setOnRefreshListener(this::refreshProjectsList);

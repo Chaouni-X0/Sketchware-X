@@ -73,15 +73,24 @@ public class AIAssistantActivity extends AppCompatActivity {
             return;
         }
 
-        // سيتم دمج الـ API الفعلي هنا لإرسال الـ prompt واستلام هيكل المشروع
         Toast.makeText(this, "جاري التواصل مع الذكاء الاصطناعي لإنشاء مشروعك...", Toast.LENGTH_LONG).show();
         
-        // محاكاة لعملية الإنشاء الفعلية باستخدام المحرك
+        // هنا سيتم استدعاء API الذكاء الاصطناعي (مثل OpenAI أو Gemini)
+        // في الوقت الحالي، سنقوم بمحاكاة استجابة أكثر تعقيداً تعتمد على الـ prompt
         new android.os.Handler().postDelayed(() -> {
-            String mockResponse = "{\"views\": [{\"id\": \"btn_hello\", \"type\": \"Button\", \"text\": \"مرحباً بك في سكتشوير إكس\"}], \"logic\": [{\"event\": \"onClick\", \"blocks\": [{\"type\": \"toast\", \"spec\": \"مرحباً محمد الشاوني\"}]}]}";
+            String mockResponse = generateMockResponseBasedOnPrompt(prompt);
             // سيتم استبدال المسار بمسار المشروع الحالي
             engine.processAIResponse(mockResponse, "/sdcard/.sketchware/data/last_project");
             Toast.makeText(this, "تم إنشاء المشروع بنجاح! يمكنك الآن فتحه وتعديله.", Toast.LENGTH_LONG).show();
         }, 3000);
+    }
+
+    private String generateMockResponseBasedOnPrompt(String prompt) {
+        // هذا مجرد محاكاة بسيطة. في التطبيق الفعلي، سيعود هذا من الـ API.
+        if (prompt.toLowerCase().contains("تسجيل الدخول") || prompt.toLowerCase().contains("login")) {
+            return "{\"views\": [{\"id\": \"et_email\", \"type\": \"EditText\", \"text\": \"البريد الإلكتروني\", \"attributes\": {\"layout_width\": \"match_parent\", \"margin_bottom\": \"16dp\"}}, {\"id\": \"et_password\", \"type\": \"EditText\", \"text\": \"كلمة المرور\", \"attributes\": {\"layout_width\": \"match_parent\", \"margin_bottom\": \"16dp\"}}, {\"id\": \"btn_login\", \"type\": \"Button\", \"text\": \"تسجيل الدخول\", \"attributes\": {\"layout_width\": \"match_parent\", \"background_color\": \"#FF6200EE\", \"text_color\": \"#FFFFFF\"}}], \"logic\": [{\"event\": \"onClick\", \"blocks\": [{\"type\": \"toast\", \"spec\": \"جاري تسجيل الدخول...\"}]}]}";
+        } else {
+            return "{\"views\": [{\"id\": \"tv_welcome\", \"type\": \"TextView\", \"text\": \"مرحباً بك في سكتشوير إكس\", \"attributes\": {\"layout_width\": \"wrap_content\", \"text_color\": \"#FF000000\"}}, {\"id\": \"btn_action\", \"type\": \"Button\", \"text\": \"اضغط هنا\", \"attributes\": {\"layout_width\": \"match_parent\", \"margin_top\": \"16dp\"}}], \"logic\": [{\"event\": \"onClick\", \"blocks\": [{\"type\": \"toast\", \"spec\": \"تم الضغط على الزر!\"}]}]}";
+        }
     }
 }

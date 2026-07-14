@@ -60,26 +60,6 @@ public class AboutResponseModel {
         public String getDescription() {
             return description.trim();
         }
-
-        public void setUsername(String username) {
-            this.user_username = username;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        public void setImg(String img) {
-            this.user_img = img;
-        }
-
-        public void setCoreTeam(boolean coreTeam) {
-            this.is_core_team = coreTeam;
-        }
-
-        public void setActive(boolean active) {
-            this.is_active = active;
-        }
     }
 
     public static class ChangeLogs {

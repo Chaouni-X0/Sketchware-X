@@ -60,9 +60,7 @@ public class ViewBean extends nA implements Parcelable {
     public static final int VIEW_TYPE_WIDGET_FAB = 16;
     public static final int VIEW_TYPE_WIDGET_ADVIEW = 17;
     public static final int VIEW_TYPE_WIDGET_MAPVIEW = 18;
-    public static final int VIEW_TYPE_LAYOUT_CONSTRAINT = 19;
-    public static final int VIEW_TYPE_WIDGET_RECYCLERVIEW = 20;
-    public static final int VIEW_TYPE_COUNT = 21;
+    public static final int VIEW_TYPE_COUNT = 19;
 
     @Expose
     public String adSize;
@@ -245,8 +243,6 @@ public class ViewBean extends nA implements Parcelable {
             case "AdView" -> VIEW_TYPE_WIDGET_ADVIEW;
             case "Button" -> VIEW_TYPE_WIDGET_BUTTON;
             case "ScrollView" -> VIEW_TYPE_LAYOUT_VSCROLLVIEW;
-            case "ConstraintLayout" -> VIEW_TYPE_LAYOUT_CONSTRAINT;
-            case "RecyclerView" -> VIEW_TYPE_WIDGET_RECYCLERVIEW;
             default -> ViewBeans.getViewTypeByTypeName(typeName);
         };
     }
@@ -271,8 +267,6 @@ public class ViewBean extends nA implements Parcelable {
             case VIEW_TYPE_WIDGET_CALENDARVIEW -> "CalendarView";
             case VIEW_TYPE_WIDGET_ADVIEW -> "AdView";
             case VIEW_TYPE_WIDGET_MAPVIEW -> "MapView";
-            case VIEW_TYPE_LAYOUT_CONSTRAINT -> "ConstraintLayout";
-            case VIEW_TYPE_WIDGET_RECYCLERVIEW -> "RecyclerView";
             default -> ViewBeans.getViewTypeName(type);
         };
     }
@@ -298,8 +292,6 @@ public class ViewBean extends nA implements Parcelable {
             case VIEW_TYPE_WIDGET_FAB -> R.drawable.ic_mtrl_fab;
             case VIEW_TYPE_WIDGET_ADVIEW -> R.drawable.ic_mtrl_ad;
             case VIEW_TYPE_WIDGET_MAPVIEW -> R.drawable.ic_mtrl_map;
-            case VIEW_TYPE_LAYOUT_CONSTRAINT -> R.drawable.ic_mtrl_view_relative;
-            case VIEW_TYPE_WIDGET_RECYCLERVIEW -> R.drawable.ic_mtrl_list;
             default -> ViewBeans.getViewTypeResId(type);
         };
     }
@@ -325,8 +317,6 @@ public class ViewBean extends nA implements Parcelable {
             case VIEW_TYPE_WIDGET_FAB -> "FloatingActionButton";
             case VIEW_TYPE_WIDGET_ADVIEW -> "AdView";
             case VIEW_TYPE_WIDGET_MAPVIEW -> "MapView";
-            case VIEW_TYPE_LAYOUT_CONSTRAINT -> "ConstraintLayout";
-            case VIEW_TYPE_WIDGET_RECYCLERVIEW -> "RecyclerView";
             default -> ViewBeans.buildClassInfo(type);
         };
         return new Gx(name);

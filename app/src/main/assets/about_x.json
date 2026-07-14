@@ -1,0 +1,22 @@
+{
+  "team": [
+    {
+      "name": "User",
+      "role": "Lead Developer & Owner",
+      "description": "Owner of Sketchware X Project",
+      "avatarUrl": "https://github.com/identicons/user.png"
+    }
+  ],
+  "changelog": [
+    {
+      "versionName": "v1.0.0-X",
+      "changes": [
+        "Rebranded to Sketchware X",
+        "Full Arabic Translation",
+        "Added AI Chat Integration",
+        "Removed previous developer info"
+      ]
+    }
+  ],
+  "discordInviteLink": "#"
+}

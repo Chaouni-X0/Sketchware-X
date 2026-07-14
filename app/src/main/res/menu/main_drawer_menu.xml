@@ -1,6 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/ai_assistant"
+        android:icon="@drawable/ic_mtrl_team"
+        android:title="AI Assistant" />
+
+    <item
         android:id="@+id/about_team"
         android:icon="@drawable/ic_mtrl_team"
         android:title="About the team" />
@@ -33,38 +38,22 @@
         </menu>
     </item>
 
-    <item android:title="الذكاء الاصطناعي">
+    <item android:title="Related links">
         <menu>
             <item
-                android:id="@+id/ai_assistant"
-                android:icon="@drawable/ic_mtrl_ai"
-                android:title="مساعد الذكاء الاصطناعي" />
-            <item
-                android:id="@+id/ai_settings"
-                android:icon="@drawable/ic_mtrl_settings"
-                android:title="إعدادات الذكاء الاصطناعي" />
-            <item
-                android:id="@+id/github_integration"
-                android:icon="@drawable/ic_github"
-                android:title="تكامل GitHub" />
-            <item
-                android:id="@+id/plugins_manager"
-                android:icon="@drawable/ic_mtrl_ad"
-                android:title="متجر الإضافات" />
-        </menu>
-    </item>
+                android:id="@+id/social_discord"
+                android:icon="@drawable/ic_discord"
+                android:title="Discord" />
 
-    <item android:title="روابط المطور">
-        <menu>
             <item
                 android:id="@+id/social_telegram"
                 android:icon="@drawable/ic_telegram"
-                android:title="تليجرام (محمد الشاوني)" />
+                android:title="Telegram" />
 
             <item
                 android:id="@+id/social_github"
                 android:icon="@drawable/ic_github"
-                android:title="GitHub (chaouni-dev)" />
+                android:title="GitHub" />
         </menu>
     </item>
 

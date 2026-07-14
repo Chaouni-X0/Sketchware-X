@@ -93,20 +93,20 @@ public class AboutActivity extends BaseAppCompatActivity {
     }
 
     private void initData() {
-        // تم تعديل المعلومات لتكون خاصة بمحمد الشاوني
-        aboutAppData.setDiscordInviteLink("https://t.me/chaouni_dev");
-        
-        java.util.ArrayList<pro.sketchware.activities.about.models.AboutResponseModel.TeamMember> team = new java.util.ArrayList<>();
-        pro.sketchware.activities.about.models.AboutResponseModel.TeamMember dev = new pro.sketchware.activities.about.models.AboutResponseModel.TeamMember();
-        dev.setUsername("محمد الشاوني");
-        dev.setDescription("المطور الرئيسي لـ Sketchware X\nchaouni.dev@gmail.com");
-        dev.setImg(""); // يمكن إضافة رابط صورة لاحقاً
-        dev.setCoreTeam(true);
-        dev.setActive(true);
-        team.add(dev);
-        
-        aboutAppData.setTeamMembers(team);
-        aboutAppData.setChangelog(new java.util.ArrayList<>());
+        network.get(Helper.getResString(R.string.link_about_team), response -> {
+            if (response != null) {
+                sharedPref.edit().putString("aboutData", response).apply();
+            } else {
+                response = sharedPref.getString("aboutData", null);
+            }
+            if (response == null) return;
+
+            Gson gson = new Gson();
+            AboutResponseModel aboutResponseModel = gson.fromJson(response, AboutResponseModel.class);
+            aboutAppData.setDiscordInviteLink(aboutResponseModel.getDiscordInviteLink());
+            aboutAppData.setTeamMembers(aboutResponseModel.getTeam());
+            aboutAppData.setChangelog(aboutResponseModel.getChangelog());
+        });
     }
 
     // ----------------- classes ----------------- //

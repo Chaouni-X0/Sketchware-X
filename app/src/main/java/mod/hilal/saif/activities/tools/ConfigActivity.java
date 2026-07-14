@@ -55,6 +55,9 @@ public class ConfigActivity extends BaseAppCompatActivity {
     public static final String SETTING_CRITICAL_UPDATE_REMINDER = "critical-update-reminder";
     public static final String SETTING_BLOCKMANAGER_DIRECTORY_PALETTE_FILE_PATH = "palletteDir";
     public static final String SETTING_BLOCKMANAGER_DIRECTORY_BLOCK_FILE_PATH = "blockDir";
+    public static final String SETTING_AI_API_KEY = "ai-api-key";
+    public static final String SETTING_AI_API_BASE = "ai-api-base";
+    public static final String SETTING_AI_MODEL = "ai-model";
 
     public static String getBackupPath() {
         return DataStore.getInstance().getString(SETTING_BACKUP_DIRECTORY, "/.sketchware/backups/");
@@ -157,6 +160,9 @@ public class ConfigActivity extends BaseAppCompatActivity {
                     "/.sketchware/resources/block/My Block/palette.json";
             case SETTING_BLOCKMANAGER_DIRECTORY_BLOCK_FILE_PATH ->
                     "/.sketchware/resources/block/My Block/block.json";
+            case SETTING_AI_API_KEY -> "";
+            case SETTING_AI_API_BASE -> "https://api.openai.com/v1";
+            case SETTING_AI_MODEL -> "gpt-4-turbo";
             default -> throw new IllegalArgumentException("Unknown key '" + key + "'!");
         };
     }
@@ -300,6 +306,33 @@ public class ConfigActivity extends BaseAppCompatActivity {
                 dialog.show();
                 return true;
             });
+
+            setupStringPreference("ai-api-key", "AI API Key", "Enter your API Key");
+            setupStringPreference("ai-api-base", "API Base URL", "Default: https://api.openai.com/v1");
+            setupStringPreference("ai-model", "AI Model", "Default: gpt-4-turbo");
+        }
+
+        private void setupStringPreference(String key, String title, String message) {
+            Preference pref = findPreference(key);
+            if (pref != null) {
+                pref.setOnPreferenceClickListener(preference -> {
+                    DialogCreateNewFileLayoutBinding binding = DialogCreateNewFileLayoutBinding.inflate(getLayoutInflater());
+                    binding.chipGroupTypes.setVisibility(View.GONE);
+                    binding.inputText.setText(dataStore.getString(key, ""));
+
+                    AlertDialog dialog = new MaterialAlertDialogBuilder(requireContext())
+                            .setView(binding.getRoot())
+                            .setTitle(title)
+                            .setMessage(message)
+                            .setNegativeButton(R.string.common_word_cancel, null)
+                            .setPositiveButton(R.string.common_word_save, (dialogInterface, which) -> {
+                                dataStore.putString(key, Helper.getText(binding.inputText));
+                            })
+                            .create();
+                    dialog.show();
+                    return true;
+                });
+            }
         }
 
         public DataStore getDataStore() {
