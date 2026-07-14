@@ -22,6 +22,8 @@
     <string name="developer_tools_component_description_guide_add_component">Add components to extend the functionality of your app.</string>
     <string name="design_library_firebase_guide_path_example">Example: users/profile</string>
     <string name="component_description_file_picker_guide_mime_type_example">Example: image/*</string>
+    <string name="logic_more_block_desc_add_variable_resource">Add variables to your moreblock.</string>
+    <string name="common_message_insufficient_storage_space">Insufficient storage space.</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="besome_blog_url">http://medium.com/sketchware</string>
     <string name="block_add_list_int_body_1">to</string>

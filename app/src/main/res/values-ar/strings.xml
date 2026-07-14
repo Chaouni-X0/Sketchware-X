@@ -23,6 +23,8 @@
     <string name="developer_tools_component_description_guide_add_component">أضف مكونات لتوسيع وظائف تطبيقك.</string>
     <string name="design_library_firebase_guide_path_example">مثال: users/profile</string>
     <string name="component_description_file_picker_guide_mime_type_example">مثال: image/*</string>
+    <string name="logic_more_block_desc_add_variable_resource">أضف متغيرات إلى البلوك الإضافي الخاص بك.</string>
+    <string name="common_message_insufficient_storage_space">مساحة التخزين غير كافية.</string>
     <string name="about_beta_changes_title">تغييرات النسخة التجريبية</string>
     <string name="about_info_developer">المطور: محمد الشاوني</string>
     <string name="about_info_email">البريد الإلكتروني: chaouni.dev@gmail.com</string>
