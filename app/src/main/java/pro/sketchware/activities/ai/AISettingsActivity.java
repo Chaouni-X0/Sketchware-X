@@ -24,28 +24,36 @@ public class AISettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ai_settings_activity);
 
-        db = new DB(this, "AI_CONFIG");
+        // استخدام SharedPreferences لسهولة الوصول من AIChatActivity
+        android.content.SharedPreferences prefs = getSharedPreferences("AISettings", MODE_PRIVATE);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.ai_settings_title);
+        }
         toolbar.setNavigationOnClickListener(v -> finish());
 
         apiKeyInput = findViewById(R.id.api_key_input);
-        agentCodeInput = findViewById(R.id.agent_code_input);
+        agentCodeInput = findViewById(R.id.agent_code_input); // سيتم استخدامه كـ Base URL
         saveButton = findViewById(R.id.save_button);
 
         // تحميل الإعدادات المحفوظة
-        apiKeyInput.setText(db.a("api_key", ""));
-        agentCodeInput.setText(db.a("agent_code", ""));
+        apiKeyInput.setText(prefs.getString("api_key", ""));
+        agentCodeInput.setText(prefs.getString("base_url", "https://api.openai.com"));
 
         saveButton.setOnClickListener(v -> {
             String apiKey = apiKeyInput.getText().toString().trim();
-            String agentCode = agentCodeInput.getText().toString().trim();
+            String baseUrl = agentCodeInput.getText().toString().trim();
 
-            db.a("api_key", apiKey);
-            db.a("agent_code", agentCode);
+            if (baseUrl.isEmpty()) baseUrl = "https://api.openai.com";
 
-            Toast.makeText(this, "تم حفظ الإعدادات بنجاح", Toast.LENGTH_SHORT).show();
+            prefs.edit()
+                .putString("api_key", apiKey)
+                .putString("base_url", baseUrl)
+                .apply();
+
+            Toast.makeText(this, R.string.ai_save_config, Toast.LENGTH_SHORT).show();
             finish();
         });
     }

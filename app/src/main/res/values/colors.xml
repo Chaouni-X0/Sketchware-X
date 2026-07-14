@@ -1,5 +1,5 @@
 <resources>
-    <color name="color_accent">#ff008dcd</color>
+    <color name="color_accent">#ffffffff</color>
     <color name="color_btn_blue_highlight">#ff005e8a</color>
     <color name="color_btn_blue_normal">#ff008dce</color>
     <color name="color_btn_green_highlight">#ff1d7a73</color>
@@ -13,12 +13,12 @@
     <color name="color_chk_white_normal">#fff5f5f5</color>
     <color name="color_control_highlight">#20008dcd</color>
     <color name="color_control_normal">#ff57beee</color>
-    <color name="color_primary">#ff008dcd</color>
-    <color name="color_primary_dark">#ff0084c2</color>
+    <color name="color_primary">#ff000000</color>
+    <color name="color_primary_dark">#ff000000</color>
     <color name="color_secondary">#ff57beee</color>
     <color name="design_menu_bg">#ffffffff</color>
     <color name="design_menu_text_color">#ff000000</color>
-    <color name="design_tab_background">#ff008dcd</color>
+    <color name="design_tab_background">#ff000000</color>
     <color name="design_tab_indicator_color">#ffffc107</color>
     <color name="design_tab_selected_text_color">#ffffffff</color>
     <color name="design_tab_text_color">#ffa8cde9</color>

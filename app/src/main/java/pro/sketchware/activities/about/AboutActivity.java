@@ -93,20 +93,39 @@ public class AboutActivity extends BaseAppCompatActivity {
     }
 
     private void initData() {
-        network.get(Helper.getResString(R.string.link_about_team), response -> {
-            if (response != null) {
-                sharedPref.edit().putString("aboutData", response).apply();
-            } else {
-                response = sharedPref.getString("aboutData", null);
+        String url = Helper.getResString(R.string.link_about_team);
+        if (url.startsWith("file:///android_asset/")) {
+            String fileName = url.replace("file:///android_asset/", "");
+            try {
+                java.io.InputStream is = getAssets().open(fileName);
+                int size = is.available();
+                byte[] buffer = new byte[size];
+                is.read(buffer);
+                is.close();
+                String response = new String(buffer, "UTF-8");
+                processAboutData(response);
+            } catch (java.io.IOException e) {
+                e.printStackTrace();
             }
-            if (response == null) return;
+        } else {
+            network.get(url, response -> {
+                if (response != null) {
+                    sharedPref.edit().putString("aboutData", response).apply();
+                } else {
+                    response = sharedPref.getString("aboutData", null);
+                }
+                processAboutData(response);
+            });
+        }
+    }
 
-            Gson gson = new Gson();
-            AboutResponseModel aboutResponseModel = gson.fromJson(response, AboutResponseModel.class);
-            aboutAppData.setDiscordInviteLink(aboutResponseModel.getDiscordInviteLink());
-            aboutAppData.setTeamMembers(aboutResponseModel.getTeam());
-            aboutAppData.setChangelog(aboutResponseModel.getChangelog());
-        });
+    private void processAboutData(String response) {
+        if (response == null) return;
+        Gson gson = new Gson();
+        AboutResponseModel aboutResponseModel = gson.fromJson(response, AboutResponseModel.class);
+        aboutAppData.setDiscordInviteLink(aboutResponseModel.getDiscordInviteLink());
+        aboutAppData.setTeamMembers(aboutResponseModel.getTeam());
+        aboutAppData.setChangelog(aboutResponseModel.getChangelog());
     }
 
     // ----------------- classes ----------------- //

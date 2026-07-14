@@ -1,21 +1,21 @@
 <resources>
-    <string name="app_name">سكتشوير اكس</string>
-    <string name="title_sketchware">سكتشوير اكس</string>
-    <string name="about_title">حول سكتشوير اكس</string>
-    <string name="about_team_title">الفريق</string>
+    <string name="app_name">سكتشوير إكس</string>
+    <string name="title_sketchware">سكتشوير إكس</string>
+    <string name="about_title">حول سكتشوير إكس</string>
+    <string name="about_team_title">المطور</string>
     <string name="about_changelog_title">سجل التغييرات</string>
     <string name="about_loading_title">جاري جلب البيانات...</string>
-    <string name="about_joindiscord">انضم إلى خادم الديسكورد الخاص بنا</string>
+    <string name="about_joindiscord">انضم إلى خادم الديسكورد</string>
     <string name="ai_assistant_title">مساعد الذكاء الاصطناعي</string>
     <string name="ai_chat_hint">اكتب رسالتك هنا...</string>
     <string name="ai_send">إرسال</string>
-    <string name="link_github_release">https://github.com/Sketchware-X/Sketchware-X/releases</string>
+    <string name="link_github_release">https://github.com/Chaouni-X0/Sketchware-X/releases</string>
     <string name="link_docs_url">https://docs.sketchware-x.pro</string>
     <string name="link_discord_invite">#</string>
     <string name="link_telegram_invite">#</string>
     <string name="link_about_team">file:///android_asset/about_x.json</string>
-    <string name="link_github_url">https://github.com/Sketchware-X/Sketchware-X</string>
-    <string name="ai_chat_title">مساعد الذكاء الاصطناعي</string>
+    <string name="link_github_url">https://github.com/Chaouni-X0/Sketchware-X</string>
+    <string name="ai_chat_title">دردشة الذكاء الاصطناعي</string>
     <string name="main_fab_new_project">مشروع جديد</string>
     <string name="design_library_material_3_theme_mode_description">تكوين مظهر وسلوك مكونات Material 3 في مشروعك.</string>
     <string name="design_manager_font_description_example_sentence">الثعلب البني السريع يقفز فوق الكلب الكسول.</string>
@@ -28,7 +28,7 @@
     <string name="about_beta_changes_title">تغييرات النسخة التجريبية</string>
     <string name="about_info_developer">المطور: محمد الشاوني</string>
     <string name="about_info_email">البريد الإلكتروني: chaouni.dev@gmail.com</string>
-    <string name="about_info_description">سكتشوير إكس هو نسخة مطورة من سكتشوير برو، مع دعم كامل للغة العربية وميزات الذكاء الاصطناعي.</string>
+    <string name="about_info_description">سكتشوير إكس هو نسخة مطورة من سكتشوير برو، مع دعم كامل للغة العربية وميزات الذكاء الاصطناعي التفاعلية.</string>
     <string name="common_word_save">حفظ</string>
     <string name="common_word_delete">حذف</string>
     <string name="common_word_edit">تعديل</string>
@@ -39,7 +39,7 @@
     <string name="main_drawer_title_my_projects">مشاريعي</string>
     <string name="main_drawer_title_tutorials">الدروس</string>
     <string name="main_drawer_title_settings">الإعدادات</string>
-    <string name="main_drawer_title_about">حول</string>
+    <string name="main_drawer_title_about">حول التطبيق</string>
     <string name="block_category_control">التحكم</string>
     <string name="block_category_operator">العمليات</string>
     <string name="block_category_math">الرياضيات</string>
@@ -50,4 +50,9 @@
     <string name="block_category_file">الملفات</string>
     <string name="block_category_moreblock">البلوكات الإضافية</string>
     <string name="ai_generate_project">إنشاء المشروع بالذكاء الاصطناعي</string>
+    <string name="ai_settings_title">إعدادات الذكاء الاصطناعي</string>
+    <string name="ai_api_key_hint">أدخل مفتاح API الخاص بك</string>
+    <string name="ai_model_hint">اختر النموذج (مثلاً: gpt-4)</string>
+    <string name="ai_custom_endpoint_hint">نقطة النهاية المخصصة (اختياري)</string>
+    <string name="ai_save_config">حفظ الإعدادات</string>
 </resources>

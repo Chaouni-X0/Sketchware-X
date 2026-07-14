@@ -1,20 +1,21 @@
 {
   "team": [
     {
-      "name": "User",
-      "role": "Lead Developer & Owner",
-      "description": "Owner of Sketchware X Project",
-      "avatarUrl": "https://github.com/identicons/user.png"
+      "name": "محمد الشاوني",
+      "role": "المطور الرئيسي والمالك",
+      "description": "مطور مشروع Sketchware X",
+      "avatarUrl": "https://github.com/Chaouni-X0.png"
     }
   ],
   "changelog": [
     {
       "versionName": "v1.0.0-X",
       "changes": [
-        "Rebranded to Sketchware X",
-        "Full Arabic Translation",
-        "Added AI Chat Integration",
-        "Removed previous developer info"
+        "إعادة تصميم الهوية البصرية إلى Sketchware X",
+        "تعريب التطبيق بالكامل",
+        "إضافة واجهة الذكاء الاصطناعي التفاعلية",
+        "إصلاح خطأ AboutActivity",
+        "دعم مفاتيح API المخصصة للذكاء الاصطناعي"
       ]
     }
   ],
