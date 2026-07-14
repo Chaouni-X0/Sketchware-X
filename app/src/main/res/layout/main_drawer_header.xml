@@ -13,9 +13,23 @@
         android:layout_height="wrap_content" />
 
     <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:srcCompat="@drawable/ic_launcher" />
+    
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/swpro_header_logo"
-        app:tint="?attr/colorPrimary" />
+        android:layout_marginTop="8dp"
+        android:text="Sketchware X"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textStyle="bold" />
+        
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="v7.0.0 (X Edition)"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?android:attr/textColorSecondary" />
 
 </LinearLayout>

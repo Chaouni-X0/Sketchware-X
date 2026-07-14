@@ -110,4 +110,5 @@
     <string name="design_actionbar_title_manager_view">مدير الواجهات</string>
     <string name="design_actionbar_title_library">مدير المكتبات</string>
     <string name="design_actionbar_title_show_source_code">عرض الكود المصدري</string>
+    <string name="menu_github_manager">مدير GitHub</string>
 </resources>

@@ -359,12 +359,12 @@ public class MainActivity extends BasePermissionAppCompatActivity {
     @NonNull
     private BottomSheetDialogView getBottomSheetDialogView() {
         BottomSheetDialogView bottomSheetDialog = new BottomSheetDialogView(this);
-        bottomSheetDialog.setTitle("Major changes in v7.0.0");
+        bottomSheetDialog.setTitle("مرحباً بك في Sketchware X");
         bottomSheetDialog.setDescription("""
-                There have been major changes since v6.3.0 fix1, \
-                and it's very important to know them all if you want your projects to still work.
+                لقد تم تحديث النظام بالكامل ليدعم أحدث المكتبات والتقنيات. \
+                تم إضافة ميزات الذكاء الاصطناعي، دعم GitHub، ومحرر أكواد متطور.
                 
-                You can view all changes whenever you want at the About Sketchware Pro screen.""");
+                يمكنك استكشاف جميع المميزات الجديدة من القائمة الجانبية.""");
 
         bottomSheetDialog.setPositiveButton("View changes", (dialog, which) -> {
             ConfigActivity.setSetting(ConfigActivity.SETTING_CRITICAL_UPDATE_REMINDER, true);

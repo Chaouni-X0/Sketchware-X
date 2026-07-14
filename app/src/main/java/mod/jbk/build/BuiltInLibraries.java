@@ -114,8 +114,8 @@ public class BuiltInLibraries {
     public static String JETBRAINS_KOTLIN_STDLIB = "kotlin-stdlib-2.2.0";
     public static String JSPECIFY = "jspecify-1.0.0";
     public static String LOTTIE = "lottie-6.6.10";
-    public static String MATERIAL = "material-1.13.0";
-    public static String OKHTTP_ANDROID = "okhttp-android-5.1.0";
+    public static String MATERIAL = "material-1.14.0-alpha05";
+    public static String OKHTTP_ANDROID = "okhttp-android-5.0.0-alpha.14";
     public static String OKIO_JVM = "okio-jvm-3.15.0";
     public static String OTPVIEW = "OTPView-0.1.0";
     public static String PATTERN_LOCK_VIEW = "pattern-lock-view";

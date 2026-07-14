@@ -141,6 +141,18 @@ public class SrcCodeEditor extends BaseAppCompatActivity {
                 ed.setEditorLanguage(CodeEditorLanguages.loadTextMateLanguage(CodeEditorLanguages.SCOPE_NAME_CPP));
                 languageId = 3;
                 break;
+
+            case 4:
+                // دعم لغة Python
+                ed.setEditorLanguage(CodeEditorLanguages.loadTextMateLanguage(CodeEditorLanguages.SCOPE_NAME_PYTHON));
+                languageId = 4;
+                break;
+
+            case 5:
+                // دعم لغة JavaScript
+                ed.setEditorLanguage(CodeEditorLanguages.loadTextMateLanguage(CodeEditorLanguages.SCOPE_NAME_JS));
+                languageId = 5;
+                break;
                 
             default:
                 ed.setEditorLanguage(new JavaLanguage());
@@ -272,7 +284,9 @@ public class SrcCodeEditor extends BaseAppCompatActivity {
                 "Java",
                 "Kotlin",
                 "XML",
-                "C++ (Native)"
+                "C++ (Native)",
+                "Python",
+                "JavaScript"
         };
 
         new MaterialAlertDialogBuilder(activity)
