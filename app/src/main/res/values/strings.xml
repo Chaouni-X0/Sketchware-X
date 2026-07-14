@@ -15,6 +15,11 @@
     <string name="main_fab_new_project">New Project</string>
     <string name="design_library_material_3_theme_mode_description">Configure the appearance and behavior of Material 3 components in your project.</string>
     <string name="design_manager_font_description_example_sentence">The quick brown fox jumps over the lazy dog.</string>
+    <string name="ai_assistant_title">AI Assistant</string>
+    <string name="ai_chat_hint">Type your message...</string>
+    <string name="ai_send">Send</string>
+    <string name="design_manager_sound_description_guide_add_sound">Click the button below to add a new sound to your project.</string>
+    <string name="developer_tools_component_description_guide_add_component">Add components to extend the functionality of your app.</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="besome_blog_url">http://medium.com/sketchware</string>
     <string name="block_add_list_int_body_1">to</string>
