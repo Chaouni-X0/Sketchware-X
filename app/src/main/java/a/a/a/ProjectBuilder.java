@@ -1019,7 +1019,4 @@ public class ProjectBuilder {
         LogUtil.d(TAG, "zipalign took " + (System.currentTimeMillis() - savedTimeMillis) + " ms");
     }
 
-    public void setBuildAppBundle(boolean buildAppBundle) {
-        this.buildAppBundle = buildAppBundle;
-    }
 }

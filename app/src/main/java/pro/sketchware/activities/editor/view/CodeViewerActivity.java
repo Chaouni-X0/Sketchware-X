@@ -94,7 +94,7 @@ public class CodeViewerActivity extends BaseAppCompatActivity {
             if (!backupDir.mkdirs() && !backupDir.isDirectory()) throw new IllegalStateException("Cannot create backup folder");
             File backup = new File(backupDir, editableFile.getName() + "." + System.currentTimeMillis() + ".bak");
             Files.copy(editableFile.toPath(), backup.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            Files.writeString(editableFile.toPath(), content, StandardCharsets.UTF_8);
+            Files.write(editableFile.toPath(), content.getBytes(StandardCharsets.UTF_8));
             originalContent = content;
             SketchwareUtil.toast("Saved · backup created");
         } catch (Exception error) {
@@ -131,7 +131,7 @@ public class CodeViewerActivity extends BaseAppCompatActivity {
     }
 
     private String read(File file) {
-        try { return Files.readString(file.toPath(), StandardCharsets.UTF_8); }
+        try { return new String(Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8); }
         catch (Exception error) { return ""; }
     }
 

@@ -542,20 +542,22 @@ public class SrcCodeEditor extends BaseAppCompatActivity {
         }
     }
 
-    private void aiFixCode() {
-        String currentCode = binding.editor.getText().toString();
-        pro.sketchware.activities.ai.AIProjectEngine engine = new pro.sketchware.activities.ai.AIProjectEngine();
-        String fixedCode = engine.generateCode("Fix the following code and optimize it:\n\n" + currentCode);
-        binding.editor.setText(fixedCode);
-        SketchwareUtil.toast("تم إصلاح الكود وتحسينه بواسطة الذكاء الاصطناعي");
-    }
-
-    private void generateDocumentation() {
-        String currentCode = binding.editor.getText().toString();
-        pro.sketchware.activities.ai.AIProjectEngine engine = new pro.sketchware.activities.ai.AIProjectEngine();
-        String doc = engine.generateCode("Generate professional Javadoc/Kdoc for this code:\n\n" + currentCode);
-        binding.editor.setText(doc + "\n" + currentCode);
-        SketchwareUtil.toast("تم توليد التوثيق تلقائياً");
+//     private void aiFixCode() {
+        SketchwareUtil.toast("AI Fix is currently being updated...");
+//         String currentCode = binding.editor.getText().toString();
+//         pro.sketchware.activities.ai.AIProjectEngine engine = new pro.sketchware.activities.ai.AIProjectEngine(getContext());
+//         String fixedCode = engine.processAIResponse("Fix the following code and optimize it:\n\n" + currentCode);
+//         binding.editor.setText(fixedCode);
+//         SketchwareUtil.toast("تم إصلاح الكود وتحسينه بواسطة الذكاء الاصطناعي");
+//     }
+// 
+//     private void generateDocumentation() {
+        SketchwareUtil.toast("Documentation generator is currently being updated...");
+//         String currentCode = binding.editor.getText().toString();
+//         pro.sketchware.activities.ai.AIProjectEngine engine = new pro.sketchware.activities.ai.AIProjectEngine(getContext());
+//         String doc = engine.processAIResponse("Generate professional Javadoc/Kdoc for this code:\n\n" + currentCode);
+//         binding.editor.setText(doc + "\n" + currentCode);
+//         SketchwareUtil.toast("تم توليد التوثيق تلقائياً");
     }
 
     @Override
