@@ -268,6 +268,10 @@
         <activity
             android:name="pro.sketchware.activities.about.AboutActivity"
             android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="pro.sketchware.activities.ai.AIChatActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="AI Chat Assistant" />
         <activity android:name="mod.jbk.editor.manage.library.ExcludeBuiltInLibrariesActivity" />
         <activity
             android:name="com.besome.sketch.editor.manage.view.PresetSettingActivity"

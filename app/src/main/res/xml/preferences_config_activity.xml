@@ -53,4 +53,22 @@
         app:key="backup-filename"
         app:summary="Default is &quot;$projectName v$versionName ($pkgName, $versionCode) $time(yyyy-MM-dd'T'HHmmss)&quot;"
         app:title="Backup filename format" />
+
+    <PreferenceCategory app:title="AI Assistant Settings">
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="ai-api-key"
+            app:summary="Enter your AI API Key"
+            app:title="AI API Key" />
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="ai-api-base"
+            app:summary="Default: https://api.openai.com/v1"
+            app:title="API Base URL" />
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="ai-model"
+            app:summary="Default: gpt-4-turbo"
+            app:title="AI Model" />
+    </PreferenceCategory>
 </PreferenceScreen>

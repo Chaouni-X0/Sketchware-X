@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">سكتشوير اكس</string>
+    <string name="title_sketchware">سكتشوير اكس</string>
+    <string name="about_title">حول سكتشوير اكس</string>
+    <string name="about_team_title">الفريق</string>
+    <string name="about_changelog_title">سجل التغييرات</string>
+    <string name="about_loading_title">جاري جلب البيانات...</string>
+    <string name="about_joindiscord">انضم إلى خادم الديسكورد الخاص بنا</string>
+    <string name="ai_assistant_title">مساعد الذكاء الاصطناعي</string>
+    <string name="ai_chat_hint">صف مشروعك هنا...</string>
+    <string name="ai_send">إرسال</string>
+    <string name="link_github_release">https://github.com/Sketchware-X/Sketchware-X/releases</string>
+    <string name="link_docs_url">https://docs.sketchware-x.pro</string>
+    <string name="link_discord_invite">#</string>
+    <string name="link_telegram_invite">#</string>
+    <string name="link_about_team">file:///android_asset/about_x.json</string>
+    <string name="link_github_url">https://github.com/Sketchware-X/Sketchware-X</string>
+</resources>

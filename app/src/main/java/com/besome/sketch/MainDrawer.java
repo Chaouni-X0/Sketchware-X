@@ -86,7 +86,11 @@ public class MainDrawer extends NavigationView {
 
     private void initializeDrawerItems(@IdRes int id) {
         Activity activity = unwrap(getContext());
-        if (id == R.id.about_team) {
+        if (id == R.id.ai_assistant) {
+            Intent intent = new Intent(activity, pro.sketchware.activities.ai.AIChatActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            activity.startActivity(intent);
+        } else if (id == R.id.about_team) {
             Intent intent = new Intent(activity, AboutActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             activity.startActivity(intent);
