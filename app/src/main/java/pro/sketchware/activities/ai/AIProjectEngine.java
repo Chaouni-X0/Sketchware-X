@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-import a.a.a.FileUtil;
+import a.a.a.yq; // This is usually where FileUtil logic resides in Sketchware Pro or similar obfuscated classes
 
 public class AIProjectEngine {
 
@@ -61,7 +61,7 @@ public class AIProjectEngine {
             }
             viewBeans.add(bean);
         }
-        FileUtil.writeFile(projectPath + "/main.view", gson.toJson(viewBeans));
+        yq.a(projectPath + "/main.view", gson.toJson(viewBeans));
     }
 
     private void applyViewAttributes(ViewBean bean, Map<String, Object> attributes) {
@@ -137,7 +137,7 @@ public class AIProjectEngine {
                 blockBeans.add(bean);
             }
         }
-        FileUtil.writeFile(projectPath + "/main.logic", gson.toJson(blockBeans));
+        yq.a(projectPath + "/main.logic", gson.toJson(blockBeans));
     }
 
     private void updateLibraries(List<Map<String, Object>> librariesList, String projectPath) {
@@ -148,10 +148,10 @@ public class AIProjectEngine {
             bean.useYn = ProjectLibraryBean.LIB_USE_Y;
             libraryBeans.add(bean);
         }
-        FileUtil.writeFile(projectPath + "/project.lib", gson.toJson(libraryBeans));
+        yq.a(projectPath + "/project.lib", gson.toJson(libraryBeans));
     }
 
     private void updatePermissions(List<String> permissions, String projectPath) {
-        FileUtil.writeFile(projectPath + "/project.permissions", gson.toJson(permissions));
+        yq.a(projectPath + "/project.permissions", gson.toJson(permissions));
     }
 }

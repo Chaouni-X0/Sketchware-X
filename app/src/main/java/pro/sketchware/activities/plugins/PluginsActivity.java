@@ -13,7 +13,7 @@ public class PluginsActivity extends BaseAppCompatActivity {
     private PluginManager pluginManager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         pluginManager = new PluginManager(this);
         
